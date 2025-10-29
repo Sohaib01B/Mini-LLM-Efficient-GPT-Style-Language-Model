@@ -1,0 +1,32 @@
+{
+  "vocab_size": 96,
+  "special_tokens": {
+    "pad_token": "<PAD>",
+    "sos_token": "<SOS>",
+    "eos_token": "<EOS>",
+    "unk_token": "<UNK>"
+  },
+  "sample_chars": [
+    "\n",
+    " ",
+    "!",
+    "\"",
+    "$",
+    "&",
+    "'",
+    "*",
+    ",",
+    "-",
+    ".",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "all_chars_count": 92
+}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}About - AI Story Generator{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-4">About This Project</h1>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3><i class="fas fa-info-circle text-primary me-2"></i>Project Overview</h3>
+                    <p>This portfolio showcases a custom-built Mini GPT language model trained from scratch to generate creative stories. The model features a transformer architecture optimized for narrative generation.</p>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3><i class="fas fa-cogs text-primary me-2"></i>Technical Details</h3>
+                    <ul>
+                        <li><strong>Architecture:</strong> Transformer-based GPT model</li>
+                        <li><strong>Parameters:</strong> ~23 million parameters</li>
+                        <li><strong>Features:</strong> Multi-head attention, positional encoding, layer normalization</li>
+                        <li><strong>Training:</strong> Custom dataset of stories and narratives</li>
+                        <li><strong>Framework:</strong> PyTorch with Flask web interface</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3><i class="fas fa-code text-primary me-2"></i>Model Architecture</h3>
+                    <pre class="bg-light p-3 rounded">
+MiniGPT Model:
+├── Embedding Layer (512 dim)
+├── 8 Transformer Blocks
+│   ├── Multi-Head Attention (8 heads)
+│   ├── Feed Forward Network (2048 dim)
+│   └── Layer Normalization
+├── Output Layer
+└── Weight Tying</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

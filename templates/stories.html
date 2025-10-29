@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Story Generator - AI Portfolio{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-4">AI Story Generator</h1>
+            <p class="text-center text-muted mb-5">Enter a prompt and watch as the AI creates a unique story for you!</p>
+
+            {% if not model_loaded %}
+            <div class="alert alert-warning text-center">
+                <i class="fas fa-exclamation-triangle"></i>
+                The AI model is currently offline. Please check back later.
+            </div>
+            {% endif %}
+
+            <div class="card shadow">
+                <div class="card-body">
+                    <form id="storyForm">
+                        <div class="mb-3">
+                            <label for="prompt" class="form-label">Story Prompt</label>
+                            <input type="text" class="form-control" id="prompt" 
+                                   placeholder="Enter your story beginning (e.g., 'Once upon a time...')" required
+                                   {% if not model_loaded %}disabled{% endif %}>
+                            <div class="form-text">Start with an interesting beginning to guide the AI.</div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="temperature" class="form-label">
+                                    Temperature: <span id="tempValue">0.8</span>
+                                </label>
+                                <input type="range" class="form-range" id="temperature" 
+                                       min="0.5" max="1.5" step="0.1" value="0.8"
+                                       {% if not model_loaded %}disabled{% endif %}>
+                                <div class="form-text">Higher = more creative</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="top_k" class="form-label">
+                                    Top-K: <span id="topKValue">50</span>
+                                </label>
+                                <input type="range" class="form-range" id="top_k" 
+                                       min="10" max="100" step="5" value="50"
+                                       {% if not model_loaded %}disabled{% endif %}>
+                                <div class="form-text">Diversity control</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="max_length" class="form-label">
+                                    Length: <span id="lengthValue">200</span>
+                                </label>
+                                <input type="range" class="form-range" id="max_length" 
+                                       min="50" max="500" step="50" value="200"
+                                       {% if not model_loaded %}disabled{% endif %}>
+                                <div class="form-text">Story length</div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg" 
+                                    id="generateBtn" {% if not model_loaded %}disabled{% endif %}>
+                                <i class="fas fa-magic me-2"></i> Generate Story
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="loading" class="text-center mt-4" style="display: none;">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">AI is crafting your story...</p>
+            </div>
+
+            <div id="result" class="mt-4" style="display: none;">
+                <div class="card border-success">
+                    <div class="card-header bg-success text-white">
+                        <i class="fas fa-book me-2"></i> Your Generated Story
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted" id="originalPrompt"></h6>
+                        <p id="generatedStory" class="fs-5"></p>
+                        <button class="btn btn-outline-success" onclick="copyToClipboard()">
+                            <i class="fas fa-copy me-2"></i> Copy Story
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5>Story History</h5>
+                    <button class="btn btn-sm btn-outline-danger" id="clearHistory">
+                        <i class="fas fa-trash me-1"></i> Clear History
+                    </button>
+                </div>
+                <div id="historyList"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/stories.js') }}"></script>
+{% endblock %}

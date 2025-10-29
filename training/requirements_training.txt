@@ -1,0 +1,6 @@
+torch>=2.0.0
+pandas>=1.5.0
+numpy>=1.21.0
+tqdm>=4.60.0
+
+# the data set from tinystories-narrative-classification

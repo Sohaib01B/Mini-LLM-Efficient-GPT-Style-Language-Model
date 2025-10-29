@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}Home - AI Story Generator{% endblock %}
+
+{% block content %}
+<div class="hero-section bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold">AI-Powered Story Generator</h1>
+                <p class="lead">Welcome to my portfolio showcasing a custom-trained Mini GPT model that creates engaging stories from simple prompts.</p>
+                <div class="mt-4">
+                    {% if model_loaded %}
+                    <span class="badge bg-success fs-6">
+                        <i class="fas fa-check-circle"></i> Model Ready
+                    </span>
+                    {% else %}
+                    <span class="badge bg-danger fs-6">
+                        <i class="fas fa-exclamation-triangle"></i> Model Offline
+                    </span>
+                    {% endif %}
+                </div>
+                <div class="mt-4">
+                    <a href="{{ url_for('stories') }}" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-magic"></i> Try Story Generator
+                    </a>
+                    <a href="{{ url_for('about') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <i class="fas fa-book-open display-1"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-brain text-primary fa-3x mb-3"></i>
+                    <h3>Custom LLM</h3>
+                    <p>Built from scratch using PyTorch with transformer architecture optimized for story generation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-code text-primary fa-3x mb-3"></i>
+                    <h3>Web Integration</h3>
+                    <p>Seamlessly integrated with Flask web framework for real-time story generation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-sliders-h text-primary fa-3x mb-3"></i>
+                    <h3>Customizable</h3>
+                    <p>Adjust temperature, top-k sampling, and length for different creative outputs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Technical Highlights</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Transformer Architecture
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Multi-Head Attention
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Positional Encoding
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <i class="fas fa-check text-success me-2"></i>
+                        GELU Activation
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Layer Normalization
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Weight Tying
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
