@@ -1,7 +1,5 @@
 ﻿# Mini-LLM-Efficient-GPT-Style-Language-Model
 
-#  Mini-LLM: Efficient GPT-Style Language Model
-
 Un modèle de langage GPT-like efficace implémenté from scratch, entraîné sur 200,000 histoires avec une architecture Transformer optimisée. Parfait pour la génération de texte créatif et l'apprentissage des LLMs.
 
 # Fonctionnalités Principales
@@ -45,3 +43,4 @@ pip install -r requirements.txt
 <img width="1887" height="872" alt="Capture d’écran 2025-10-28 153942" src="https://github.com/user-attachments/assets/69963840-b2ec-4024-bb80-5456a562c8b9" />
 <img width="891" height="756" alt="Capture d’écran 2025-10-28 154044" src="https://github.com/user-attachments/assets/499e1f76-1868-401c-b2a3-0b3d68bb9c19" />
 <img width="917" height="671" alt="Capture d’écran 2025-10-28 154334" src="https://github.com/user-attachments/assets/fa842b9b-b655-4755-afe0-a549637b24be" />
+
