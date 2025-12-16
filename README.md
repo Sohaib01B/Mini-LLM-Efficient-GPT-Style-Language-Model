@@ -37,10 +37,25 @@ Longueur configurable de 50 à 500 tokens
 # Installer les dépendances
 pip install -r requirements.txt
 
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![Machine Learning](https://img.shields.io/badge/Machine-Learning-orange)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0-red)
+
+## Description
+Brève description du projet avec les technologies utilisées.
+
+## Technologies
+- **Langage** : Python 3.9
+- **ML/DL** : TensorFlow, Keras, Scikit-learn
+- **Visualisation** : Matplotlib, Seaborn
+- **Traitement données** : Pandas, NumPy
+
+
 # Demo
 <img width="900" height="742" alt="Capture d’écran 2025-10-28 154228" src="https://github.com/user-attachments/assets/36ab953a-0c92-42e8-be03-c6280452595e" />
 
 <img width="1887" height="872" alt="Capture d’écran 2025-10-28 153942" src="https://github.com/user-attachments/assets/69963840-b2ec-4024-bb80-5456a562c8b9" />
 <img width="891" height="756" alt="Capture d’écran 2025-10-28 154044" src="https://github.com/user-attachments/assets/499e1f76-1868-401c-b2a3-0b3d68bb9c19" />
 <img width="917" height="671" alt="Capture d’écran 2025-10-28 154334" src="https://github.com/user-attachments/assets/fa842b9b-b655-4755-afe0-a549637b24be" />
+
 
